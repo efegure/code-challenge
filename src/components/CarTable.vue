@@ -92,7 +92,6 @@ const table = useVueTable({
   getPaginationRowModel: getPaginationRowModel()
 })
 
-function rerender() {}
 function editRow(carId: String, id: String) {
   console.log('EDTI', id)
   emit('edit', carId, id)
@@ -140,24 +139,6 @@ function handlePageSizeChange(e) {
           </td>
         </tr>
       </tbody>
-      <!-- <tfoot>
-        <tr
-          v-for="footerGroup in table.getFooterGroups()"
-          :key="footerGroup.id"
-        >
-          <th
-            v-for="header in footerGroup.headers"
-            :key="header.id"
-            :colSpan="header.colSpan"
-          >
-            <FlexRender
-              v-if="!header.isPlaceholder"
-              :render="header.column.columnDef.footer"
-              :props="header.getContext()"
-            />
-          </th>
-        </tr>
-      </tfoot> -->
     </table>
     <div>
       <div class="flex flex-wrap items-center gap-2">
